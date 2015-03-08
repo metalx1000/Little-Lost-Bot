@@ -1,6 +1,6 @@
 // Configure bot
 var config = {
-  channels: ["#lostbotland", "#filmsbykris"],
+  channels: ["#filmsbykris"],
   server: "irc.freenode.net",
   botName: "lilbot"
 };
