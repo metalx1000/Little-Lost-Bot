@@ -27,11 +27,16 @@ bot.addListener("message", function(from, to, text, message) {
   }
 });
 
+function shuffle_array(o){
+    for(var j, x, i = o.length; i; j = Math.floor(Math.random() * i), x = o[--i], o[i] = o[j], o[j] = x);
+    return o;
+};
 
 //checks for key phrases and replies when one matchs
 function check_msg(msg){
   var fs = require('fs');
   var array = fs.readFileSync('talk.lst').toString().split("\n");
+  array = shuffle_array(array);
   for(i in array) {
     var bot=array[i].split("|");
     var bot_read = bot[0].toLowerCase();
