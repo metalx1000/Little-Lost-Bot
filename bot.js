@@ -1,6 +1,6 @@
 // Configure bot
 var config = {
-  channels: ["#filmsbykris"],
+  channels: ["#lostbotland"],
   server: "irc.freenode.net",
   botName: "lilbot"
 };
@@ -14,15 +14,17 @@ var bot = new irc.Client(config.server, config.botName, {
 
 // Listen for new people joining
 bot.addListener("join", function(channel, who) {
-  bot.say(channel, who + "...dude...welcome back!");
+  bot.say(channel, who + ", hey. Welcome!");
+  bot.say(channel, who + ", feel free to hangout and learn something new!");
 });
 
 // Listen for messages and reply
 bot.addListener("message", function(from, to, text, message) {
 
   var msg = check_msg(text);
-  bot.say(config.channels[0], from + ": " + msg);
-
+  if ( msg ){
+    bot.say(config.channels[0], from + ": " + msg);
+  }
 });
 
 
