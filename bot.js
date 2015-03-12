@@ -14,8 +14,9 @@ var bot = new irc.Client(config.server, config.botName, {
 
 // Listen for new people joining
 bot.addListener("join", function(channel, who) {
-  bot.say(channel, who + ", hey. Welcome!");
-  bot.say(channel, who + ", feel free to hangout and learn something new!");
+  var hello = random_hello();
+  //bot.say(channel, who + ", hey. Welcome!");
+  bot.say(channel, who + ", " + hello);
 });
 
 // Listen for messages and reply
@@ -47,4 +48,9 @@ function check_msg(msg){
   }
 }
 
-
+function random_hello(){
+  var fs = require('fs');
+  var array = fs.readFileSync('hello.lst').toString().split("\n");
+  array = shuffle_array(array);
+  return array[0];
+}
