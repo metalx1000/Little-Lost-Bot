@@ -25,6 +25,7 @@ bot.addListener("message", function(from, to, text, message) {
   var msg = check_msg(text);
   if ( msg ){
     bot.say(config.channels[0], from + ": " + msg);
+    console.log(from + ": " + msg);
   }
   else if ( text.toLowerCase().indexOf("random video") != -1 ){
     random_video();
@@ -71,8 +72,10 @@ function random_video(){
           var videos = body.split('\n');
           videos = shuffle_array(videos);
           var video = videos[0].split('|');
+          var title = video[0];
           var url = "https://www.youtube.com/watch?v=" + video[1];
-          bot.say(config.channels[0], url);
+          bot.say(config.channels[0], title + " : " + url);
+          console.log(title + " : " + url);
       });
   });
 }
