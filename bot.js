@@ -26,6 +26,9 @@ bot.addListener("message", function(from, to, text, message) {
   if ( msg ){
     bot.say(config.channels[0], from + ": " + msg);
   }
+  else if ( text.toLowerCase().indexOf("random video") != -1 ){
+    random_video();
+  }
 });
 
 function shuffle_array(o){
@@ -54,3 +57,25 @@ function random_hello(){
   array = shuffle_array(array);
   return array[0];
 }
+
+function random_video(){
+  var http = require('http');
+
+  http.get("http://filmsbykris.com/site_data/video.lst").on('response', function (response) {
+      var body = '';
+      var i = 0;
+      response.on('data', function (chunk) {
+          body += chunk;
+      });
+      response.on('end', function () {
+          var videos = body.split('\n');
+          videos = shuffle_array(videos);
+          var video = videos[0].split('|');
+          var url = "https://www.youtube.com/watch?v=" + video[1];
+          bot.say(config.channels[0], url);
+      });
+  });
+}
+
+//display random video URL every hour
+setInterval(random_video,60*60*1000);
