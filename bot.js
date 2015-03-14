@@ -6,6 +6,7 @@ var config = {
 };
 
 var irc = require("irc");
+var fs = require('fs');
 
 // Create the bot
 var bot = new irc.Client(config.server, config.botName, {
@@ -31,8 +32,25 @@ bot.addListener("message", function(from, to, text, message) {
     random_video();
   }else if ( text.toLowerCase().indexOf("ascii art") != -1 ){
     get_ascii();   
+  }else if ( text.toLowerCase().indexOf("cowsay") != -1 ){
+    cow_say("cow",text);
+  }else if ( text.toLowerCase().indexOf("tuxsay") != -1 ){
+    cow_say("tux",text);
   }
+
 });
+
+function cow_say(cow,text){
+    var msg = text.split('"');
+    bot.say(config.channels[0], " ________");
+    bot.say(config.channels[0], "<" + msg[1] + ">");
+    var array = fs.readFileSync("cow_say/" + cow + ".ascii").toString().split("\n");
+    for(i in array) {
+      bot.say(config.channels[0], array[i]);
+      console.log(array[i]);
+    }
+
+}
 
 function shuffle_array(o){
     for(var j, x, i = o.length; i; j = Math.floor(Math.random() * i), x = o[--i], o[i] = o[j], o[j] = x);
@@ -41,7 +59,6 @@ function shuffle_array(o){
 
 //checks for key phrases and replies when one matchs
 function check_msg(msg){
-  var fs = require('fs');
   var array = fs.readFileSync('talk.lst').toString().split("\n");
   array = shuffle_array(array);
   for(i in array) {
