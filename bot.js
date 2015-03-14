@@ -8,6 +8,7 @@ var config = {
 var irc = require("irc");
 var fs = require('fs');
 var morse = require('morse');
+var http = require('http');
 
 // Create the bot
 var bot = new irc.Client(config.server, config.botName, {
@@ -41,10 +42,12 @@ bot.addListener("message", function(from, to, text, message) {
     morse_code(from,text);
   }else if ( text.toLowerCase().indexOf("morse decode") != -1 && text.indexOf('"') != -1){
     morse_decode(from,text);
+  }else if ( text.toLowerCase().indexOf(config.botName) != -1 && text.toLowerCase().indexOf("list phrase") != -1){
+    var phrases = list_phrases();
+    bot.say(config.channels[0], from + ": I currnetly respond to the following phrases " + phrases);
+    console.log(from + ": I currnetly respond to the following phrases " + phrases);
+
   }
-
-
-
 });
 
 function morse_code(from,text){
@@ -96,15 +99,24 @@ function check_msg(msg){
   }
 }
 
+function list_phrases(){
+  var array = fs.readFileSync('talk.lst').toString().split("\n");
+  var command = [];
+  array = shuffle_array(array);
+  for(i in array) {
+    var cmd = array[i].split("|");   
+    command.push(cmd[0]);
+  }
+  return uniq(command);
+}
+
 function random_hello(){
-  var fs = require('fs');
   var array = fs.readFileSync('hello.lst').toString().split("\n");
   array = shuffle_array(array);
   return array[0];
 }
 
 function random_video(){
-  var http = require('http');
 
   http.get("http://filmsbykris.com/site_data/video.lst").on('response', function (response) {
       var body = '';
@@ -160,3 +172,15 @@ function sleep(time, callback) {
     }
     callback();
 }
+
+function uniq(arr) {
+    var hash = {}, result = [];
+    for ( var i = 0, l = arr.length; i < l; ++i ) {
+        if ( !hash.hasOwnProperty(arr[i]) ) { //it works with objects! in FF, at least
+            hash[ arr[i] ] = true;
+            result.push(arr[i]);
+        }
+    }
+    return result;
+}
+
