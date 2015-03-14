@@ -28,3 +28,8 @@ output:
 
 you can also ask little lost bot for a random FilmsByKris youtube video.
 example: "anyone know of some random videos I could watch?"
+
+You can encode and decode Morse Code
+examples: 
+morse decode ".... . .-.. .-.. --- ....... .-- --- .-. .-.. -.."
+morse code "Hello World"
