@@ -37,19 +37,32 @@ bot.addListener("message", function(from, to, text, message) {
     cow_say("cow",text);
   }else if ( text.toLowerCase().indexOf("tuxsay") != -1 ){
     cow_say("tux",text);
-  }else if ( text.toLowerCase().indexOf("morse code") != -1 ){
+  }else if ( text.toLowerCase().indexOf("morse code") != -1 && text.indexOf('"') != -1){
     morse_code(from,text);
+  }else if ( text.toLowerCase().indexOf("morse decode") != -1 && text.indexOf('"') != -1){
+    morse_decode(from,text);
   }
+
 
 
 });
 
 function morse_code(from,text){
   var msg = text.split('"');
-  var encoded = morse.encode(msg[1]);
-  bot.say(config.channels[0], from + ", your message in Morse Code is: '" + encoded + "'");
-  console.log(from + ", your message in Morse Code is: " + encoded);
+  if(msg[1] != ""){
+    var encoded = morse.encode(msg[1]);
+    bot.say(config.channels[0], from + ", your message in Morse Code is: '" + encoded + "'");
+    console.log(from + ", your message in Morse Code is: " + encoded);
+  }
+}
 
+function morse_decode(from,text){
+  var msg = text.split('"');
+  if(msg[1] != ""){
+    var decoded = morse.decode(msg[1]);
+    bot.say(config.channels[0], from + ", your message in Morse Code is: '" + decoded + "'");
+    console.log(from + ", your message in Morse Code is: " + decoded);
+  }
 }
 
 function cow_say(cow,text){
