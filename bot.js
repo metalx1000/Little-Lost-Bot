@@ -7,6 +7,7 @@ var config = {
 
 var irc = require("irc");
 var fs = require('fs');
+var morse = require('morse');
 
 // Create the bot
 var bot = new irc.Client(config.server, config.botName, {
@@ -36,9 +37,20 @@ bot.addListener("message", function(from, to, text, message) {
     cow_say("cow",text);
   }else if ( text.toLowerCase().indexOf("tuxsay") != -1 ){
     cow_say("tux",text);
+  }else if ( text.toLowerCase().indexOf("morse code") != -1 ){
+    morse_code(from,text);
   }
 
+
 });
+
+function morse_code(from,text){
+  var msg = text.split('"');
+  var encoded = morse.encode(msg[1]);
+  bot.say(config.channels[0], from + ", your message in Morse Code is: '" + encoded + "'");
+  console.log(from + ", your message in Morse Code is: " + encoded);
+
+}
 
 function cow_say(cow,text){
     var msg = text.split('"');
