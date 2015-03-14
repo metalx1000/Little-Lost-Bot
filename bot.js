@@ -29,6 +29,8 @@ bot.addListener("message", function(from, to, text, message) {
   }
   else if ( text.toLowerCase().indexOf("random video") != -1 ){
     random_video();
+  }else if ( text.toLowerCase().indexOf("ascii art") != -1 ){
+    get_ascii();   
   }
 });
 
@@ -82,3 +84,37 @@ function random_video(){
 
 //display random video URL every hour
 setInterval(random_video,60*60*1000);
+
+//load random ascii file
+function get_ascii(){
+  var fs = require('fs');
+  var art = [];
+  var dir = "ascii/";
+  fs.readdir(dir, function(err, files) {
+    if (err) return;
+    files.forEach(function(f) {
+      art.push(f);
+    });
+    art = shuffle_array(art);
+    console.log(art[0]);
+    var array = fs.readFileSync(dir + art[0]).toString().split("\n");
+    for(i in array) {
+      var _this = this;
+      var line = array[i];
+      setTimeout(function(line){ 
+        bot.say(config.channels[0], line);
+        console.log(line);
+      },i * 700,line);
+    }
+  });
+
+
+}
+
+function sleep(time, callback) {
+    var stop = new Date().getTime();
+    while(new Date().getTime() < stop + time) {
+        ;
+    }
+    callback();
+}

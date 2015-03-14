@@ -1,0 +1,389 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/bin/nodejs', '/usr/bin/npm', 'install', 'sleep' ]
+2 info using npm@1.4.21
+3 info using node@v0.10.29
+4 verbose cache add [ 'sleep', null ]
+5 verbose cache add name=undefined spec="sleep" args=["sleep",null]
+6 verbose parsed url { protocol: null,
+6 verbose parsed url   slashes: null,
+6 verbose parsed url   auth: null,
+6 verbose parsed url   host: null,
+6 verbose parsed url   port: null,
+6 verbose parsed url   hostname: null,
+6 verbose parsed url   hash: null,
+6 verbose parsed url   search: null,
+6 verbose parsed url   query: null,
+6 verbose parsed url   pathname: 'sleep',
+6 verbose parsed url   path: 'sleep',
+6 verbose parsed url   href: 'sleep' }
+7 silly lockFile c3ca5f78-sleep sleep
+8 verbose lock sleep /home/metalx1000/.npm/c3ca5f78-sleep.lock
+9 silly lockFile c3ca5f78-sleep sleep
+10 silly lockFile c3ca5f78-sleep sleep
+11 verbose addNamed [ 'sleep', '' ]
+12 verbose addNamed [ null, '*' ]
+13 silly lockFile e2b4ed60-sleep sleep@
+14 verbose lock sleep@ /home/metalx1000/.npm/e2b4ed60-sleep.lock
+15 silly addNameRange { name: 'sleep', range: '*', hasData: false }
+16 verbose request where is /sleep
+17 verbose request registry https://registry.npmjs.org/
+18 verbose request id c217ed10250604f3
+19 verbose url raw /sleep
+20 verbose url resolving [ 'https://registry.npmjs.org/', './sleep' ]
+21 verbose url resolved https://registry.npmjs.org/sleep
+22 verbose request where is https://registry.npmjs.org/sleep
+23 info trying registry request attempt 1 at 12:54:55
+24 http GET https://registry.npmjs.org/sleep
+25 http 200 https://registry.npmjs.org/sleep
+26 silly registry.get cb [ 200,
+26 silly registry.get   { date: 'Sat, 14 Mar 2015 16:56:21 GMT',
+26 silly registry.get     server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+26 silly registry.get     etag: '"CFBSGFLWNMYW9VHV81GJGX323"',
+26 silly registry.get     'content-type': 'application/json',
+26 silly registry.get     'cache-control': 'max-age=60',
+26 silly registry.get     'content-length': '14673',
+26 silly registry.get     'accept-ranges': 'bytes',
+26 silly registry.get     via: '1.1 varnish',
+26 silly registry.get     age: '0',
+26 silly registry.get     'x-served-by': 'cache-jfk1027-JFK',
+26 silly registry.get     'x-cache': 'MISS',
+26 silly registry.get     'x-cache-hits': '0',
+26 silly registry.get     'x-timer': 'S1426352181.432339,VS0,VE172',
+26 silly registry.get     vary: 'Accept',
+26 silly registry.get     'keep-alive': 'timeout=10, max=50',
+26 silly registry.get     connection: 'Keep-Alive' } ]
+27 silly addNameRange number 2 { name: 'sleep', range: '*', hasData: true }
+28 silly addNameRange versions [ 'sleep',
+28 silly addNameRange   [ '1.0.0',
+28 silly addNameRange     '1.0.1',
+28 silly addNameRange     '1.0.2',
+28 silly addNameRange     '1.1.0',
+28 silly addNameRange     '1.1.1',
+28 silly addNameRange     '1.1.2',
+28 silly addNameRange     '1.1.3',
+28 silly addNameRange     '1.1.4',
+28 silly addNameRange     '1.1.5',
+28 silly addNameRange     '1.1.6',
+28 silly addNameRange     '1.1.7',
+28 silly addNameRange     '1.1.8',
+28 silly addNameRange     '1.2.0',
+28 silly addNameRange     '2.0.0' ] ]
+29 verbose addNamed [ 'sleep', '2.0.0' ]
+30 verbose addNamed [ '2.0.0', '2.0.0' ]
+31 silly lockFile 24ae5886-sleep-2-0-0 sleep@2.0.0
+32 verbose lock sleep@2.0.0 /home/metalx1000/.npm/24ae5886-sleep-2-0-0.lock
+33 silly lockFile 592efb69--npmjs-org-sleep-sleep-2-0-0-tgz https://registry.npmjs.org/sleep/-/sleep-2.0.0.tgz
+34 verbose lock https://registry.npmjs.org/sleep/-/sleep-2.0.0.tgz /home/metalx1000/.npm/592efb69--npmjs-org-sleep-sleep-2-0-0-tgz.lock
+35 verbose addRemoteTarball [ 'https://registry.npmjs.org/sleep/-/sleep-2.0.0.tgz',
+35 verbose addRemoteTarball   '96d8ef97970ecad464b146ea5e86dd5d6ceb65bc' ]
+36 info retry fetch attempt 1 at 12:54:55
+37 verbose fetch to= /tmp/npm-26977-TSb3uoNl/registry.npmjs.org/sleep/-/sleep-2.0.0.tgz
+38 http GET https://registry.npmjs.org/sleep/-/sleep-2.0.0.tgz
+39 http 200 https://registry.npmjs.org/sleep/-/sleep-2.0.0.tgz
+40 silly lockFile 592efb69--npmjs-org-sleep-sleep-2-0-0-tgz https://registry.npmjs.org/sleep/-/sleep-2.0.0.tgz
+41 silly lockFile 592efb69--npmjs-org-sleep-sleep-2-0-0-tgz https://registry.npmjs.org/sleep/-/sleep-2.0.0.tgz
+42 silly lockFile 24ae5886-sleep-2-0-0 sleep@2.0.0
+43 silly lockFile 24ae5886-sleep-2-0-0 sleep@2.0.0
+44 silly lockFile e2b4ed60-sleep sleep@
+45 silly lockFile e2b4ed60-sleep sleep@
+46 silly resolved [ { name: 'sleep',
+46 silly resolved     version: '2.0.0',
+46 silly resolved     main: 'index.js',
+46 silly resolved     description: 'Add sleep() and usleep() to nodejs',
+46 silly resolved     homepage: 'http://github.com/ErikDubbelboer/node-sleep',
+46 silly resolved     author: { name: 'Erik Dubbelboer', email: 'erik@dubbelboer.com' },
+46 silly resolved     engines: { node: '>=0.4.0' },
+46 silly resolved     keywords: [ 'sleep', 'usleep' ],
+46 silly resolved     repository:
+46 silly resolved      { type: 'git',
+46 silly resolved        url: 'https://github.com/ErikDubbelboer/node-sleep.git' },
+46 silly resolved     dependencies: { nan: '*' },
+46 silly resolved     gypfile: true,
+46 silly resolved     scripts: { install: 'node-gyp rebuild' },
+46 silly resolved     gitHead: '3c850e05250d3ad72499fb0cefc4be13e9ce24d2',
+46 silly resolved     bugs: { url: 'https://github.com/ErikDubbelboer/node-sleep/issues' },
+46 silly resolved     _id: 'sleep@2.0.0',
+46 silly resolved     _shasum: '96d8ef97970ecad464b146ea5e86dd5d6ceb65bc',
+46 silly resolved     _from: 'sleep@',
+46 silly resolved     _npmVersion: '1.4.28',
+46 silly resolved     _npmUser: { name: 'erikdubbelboer', email: 'erik@dubbelboer.com' },
+46 silly resolved     maintainers: [ [Object] ],
+46 silly resolved     dist:
+46 silly resolved      { shasum: '96d8ef97970ecad464b146ea5e86dd5d6ceb65bc',
+46 silly resolved        tarball: 'http://registry.npmjs.org/sleep/-/sleep-2.0.0.tgz' },
+46 silly resolved     directories: {},
+46 silly resolved     _resolved: 'https://registry.npmjs.org/sleep/-/sleep-2.0.0.tgz' } ]
+47 info install sleep@2.0.0 into /home/metalx1000/www/Little-Lost-Bot
+48 info installOne sleep@2.0.0
+49 verbose node_modules/sleep unbuild
+50 verbose tar unpack /home/metalx1000/.npm/sleep/2.0.0/package.tgz
+51 silly lockFile ee6936a8-ttle-Lost-Bot-node-modules-sleep tar:///home/metalx1000/www/Little-Lost-Bot/node_modules/sleep
+52 verbose lock tar:///home/metalx1000/www/Little-Lost-Bot/node_modules/sleep /home/metalx1000/.npm/ee6936a8-ttle-Lost-Bot-node-modules-sleep.lock
+53 silly lockFile b38e8191-1000-npm-sleep-2-0-0-package-tgz tar:///home/metalx1000/.npm/sleep/2.0.0/package.tgz
+54 verbose lock tar:///home/metalx1000/.npm/sleep/2.0.0/package.tgz /home/metalx1000/.npm/b38e8191-1000-npm-sleep-2-0-0-package-tgz.lock
+55 silly gunzTarPerm modes [ '755', '644' ]
+56 silly gunzTarPerm extractEntry package.json
+57 silly gunzTarPerm modified mode [ 'package.json', 436, 420 ]
+58 silly gunzTarPerm extractEntry .npmignore
+59 silly gunzTarPerm modified mode [ '.npmignore', 436, 420 ]
+60 silly gunzTarPerm extractEntry README.md
+61 silly gunzTarPerm modified mode [ 'README.md', 436, 420 ]
+62 silly gunzTarPerm extractEntry test.js
+63 silly gunzTarPerm modified mode [ 'test.js', 436, 420 ]
+64 silly gunzTarPerm extractEntry index.js
+65 silly gunzTarPerm modified mode [ 'index.js', 436, 420 ]
+66 silly gunzTarPerm extractEntry LICENSE.txt
+67 silly gunzTarPerm modified mode [ 'LICENSE.txt', 436, 420 ]
+68 silly gunzTarPerm extractEntry sleep.cc
+69 silly gunzTarPerm modified mode [ 'sleep.cc', 436, 420 ]
+70 silly gunzTarPerm extractEntry binding.gyp
+71 silly gunzTarPerm modified mode [ 'binding.gyp', 436, 420 ]
+72 silly lockFile ee6936a8-ttle-Lost-Bot-node-modules-sleep tar:///home/metalx1000/www/Little-Lost-Bot/node_modules/sleep
+73 silly lockFile ee6936a8-ttle-Lost-Bot-node-modules-sleep tar:///home/metalx1000/www/Little-Lost-Bot/node_modules/sleep
+74 silly lockFile b38e8191-1000-npm-sleep-2-0-0-package-tgz tar:///home/metalx1000/.npm/sleep/2.0.0/package.tgz
+75 silly lockFile b38e8191-1000-npm-sleep-2-0-0-package-tgz tar:///home/metalx1000/.npm/sleep/2.0.0/package.tgz
+76 info preinstall sleep@2.0.0
+77 verbose readDependencies using package.json deps
+78 verbose readDependencies using package.json deps
+79 verbose cache add [ 'nan@*', null ]
+80 verbose cache add name=undefined spec="nan@*" args=["nan@*",null]
+81 verbose parsed url { protocol: null,
+81 verbose parsed url   slashes: null,
+81 verbose parsed url   auth: null,
+81 verbose parsed url   host: null,
+81 verbose parsed url   port: null,
+81 verbose parsed url   hostname: null,
+81 verbose parsed url   hash: null,
+81 verbose parsed url   search: null,
+81 verbose parsed url   query: null,
+81 verbose parsed url   pathname: 'nan@*',
+81 verbose parsed url   path: 'nan@*',
+81 verbose parsed url   href: 'nan@*' }
+82 verbose cache add name="nan" spec="*" args=["nan","*"]
+83 verbose parsed url { protocol: null,
+83 verbose parsed url   slashes: null,
+83 verbose parsed url   auth: null,
+83 verbose parsed url   host: null,
+83 verbose parsed url   port: null,
+83 verbose parsed url   hostname: null,
+83 verbose parsed url   hash: null,
+83 verbose parsed url   search: null,
+83 verbose parsed url   query: null,
+83 verbose parsed url   pathname: '*',
+83 verbose parsed url   path: '*',
+83 verbose parsed url   href: '*' }
+84 verbose addNamed [ 'nan', '*' ]
+85 verbose addNamed [ null, '*' ]
+86 silly lockFile 4837b294-nan nan@*
+87 verbose lock nan@* /home/metalx1000/.npm/4837b294-nan.lock
+88 silly addNameRange { name: 'nan', range: '*', hasData: false }
+89 verbose request where is /nan
+90 verbose request registry https://registry.npmjs.org/
+91 verbose url raw /nan
+92 verbose url resolving [ 'https://registry.npmjs.org/', './nan' ]
+93 verbose url resolved https://registry.npmjs.org/nan
+94 verbose request where is https://registry.npmjs.org/nan
+95 info trying registry request attempt 1 at 12:54:55
+96 verbose etag "12EHA1PNRCCAOAQY0AIBQ9ET9"
+97 http GET https://registry.npmjs.org/nan
+98 http 304 https://registry.npmjs.org/nan
+99 silly registry.get cb [ 304,
+99 silly registry.get   { date: 'Sat, 14 Mar 2015 16:56:22 GMT',
+99 silly registry.get     server: 'Apache',
+99 silly registry.get     via: '1.1 varnish',
+99 silly registry.get     'last-modified': 'Sat, 14 Mar 2015 16:56:22 GMT',
+99 silly registry.get     'cache-control': 'max-age=60',
+99 silly registry.get     etag: '"12EHA1PNRCCAOAQY0AIBQ9ET9"',
+99 silly registry.get     age: '8',
+99 silly registry.get     'x-served-by': 'cache-jfk1025-JFK',
+99 silly registry.get     'x-cache': 'HIT',
+99 silly registry.get     'x-cache-hits': '1',
+99 silly registry.get     'x-timer': 'S1426352182.188602,VS0,VE0',
+99 silly registry.get     vary: 'Accept',
+99 silly registry.get     'content-length': '0',
+99 silly registry.get     'keep-alive': 'timeout=10, max=50',
+99 silly registry.get     connection: 'Keep-Alive' } ]
+100 verbose etag https://registry.npmjs.org/nan from cache
+101 silly addNameRange number 2 { name: 'nan', range: '*', hasData: true }
+102 silly addNameRange versions [ 'nan',
+102 silly addNameRange   [ '0.3.0-wip',
+102 silly addNameRange     '0.3.0-wip2',
+102 silly addNameRange     '0.3.0',
+102 silly addNameRange     '0.3.1',
+102 silly addNameRange     '0.3.2',
+102 silly addNameRange     '0.4.0',
+102 silly addNameRange     '0.4.1',
+102 silly addNameRange     '0.4.2',
+102 silly addNameRange     '0.4.3',
+102 silly addNameRange     '0.4.4',
+102 silly addNameRange     '0.5.0',
+102 silly addNameRange     '0.5.1',
+102 silly addNameRange     '0.5.2',
+102 silly addNameRange     '0.6.0',
+102 silly addNameRange     '0.7.0',
+102 silly addNameRange     '0.7.1',
+102 silly addNameRange     '0.8.0',
+102 silly addNameRange     '1.0.0',
+102 silly addNameRange     '1.1.0',
+102 silly addNameRange     '1.1.1',
+102 silly addNameRange     '1.1.2',
+102 silly addNameRange     '1.2.0',
+102 silly addNameRange     '1.3.0',
+102 silly addNameRange     '1.4.0',
+102 silly addNameRange     '1.4.1',
+102 silly addNameRange     '1.5.0',
+102 silly addNameRange     '1.4.2',
+102 silly addNameRange     '1.4.3',
+102 silly addNameRange     '1.5.1',
+102 silly addNameRange     '1.5.2',
+102 silly addNameRange     '1.6.0',
+102 silly addNameRange     '1.5.3',
+102 silly addNameRange     '1.6.1',
+102 silly addNameRange     '1.6.2',
+102 silly addNameRange     '1.7.0' ] ]
+103 verbose addNamed [ 'nan', '1.7.0' ]
+104 verbose addNamed [ '1.7.0', '1.7.0' ]
+105 silly lockFile e44e3bb6-nan-1-7-0 nan@1.7.0
+106 verbose lock nan@1.7.0 /home/metalx1000/.npm/e44e3bb6-nan-1-7-0.lock
+107 silly lockFile d5712a55-stry-npmjs-org-nan-nan-1-7-0-tgz https://registry.npmjs.org/nan/-/nan-1.7.0.tgz
+108 verbose lock https://registry.npmjs.org/nan/-/nan-1.7.0.tgz /home/metalx1000/.npm/d5712a55-stry-npmjs-org-nan-nan-1-7-0-tgz.lock
+109 verbose addRemoteTarball [ 'https://registry.npmjs.org/nan/-/nan-1.7.0.tgz',
+109 verbose addRemoteTarball   '755b997404e83cbe7bc08bc3c5c56291bce87438' ]
+110 info retry fetch attempt 1 at 12:54:56
+111 verbose fetch to= /tmp/npm-26977-TSb3uoNl/registry.npmjs.org/nan/-/nan-1.7.0.tgz
+112 http GET https://registry.npmjs.org/nan/-/nan-1.7.0.tgz
+113 http 200 https://registry.npmjs.org/nan/-/nan-1.7.0.tgz
+114 silly lockFile d5712a55-stry-npmjs-org-nan-nan-1-7-0-tgz https://registry.npmjs.org/nan/-/nan-1.7.0.tgz
+115 silly lockFile d5712a55-stry-npmjs-org-nan-nan-1-7-0-tgz https://registry.npmjs.org/nan/-/nan-1.7.0.tgz
+116 silly lockFile e44e3bb6-nan-1-7-0 nan@1.7.0
+117 silly lockFile e44e3bb6-nan-1-7-0 nan@1.7.0
+118 silly lockFile 4837b294-nan nan@*
+119 silly lockFile 4837b294-nan nan@*
+120 silly resolved [ { name: 'nan',
+120 silly resolved     version: '1.7.0',
+120 silly resolved     description: 'Native Abstractions for Node.js: C++ header for Node 0.8->0.12 compatibility',
+120 silly resolved     main: 'include_dirs.js',
+120 silly resolved     repository: { type: 'git', url: 'git://github.com/rvagg/nan.git' },
+120 silly resolved     scripts:
+120 silly resolved      { test: 'tap --gc test/js/*-test.js',
+120 silly resolved        'rebuild-tests': 'pangyp rebuild --directory test' },
+120 silly resolved     contributors:
+120 silly resolved      [ [Object],
+120 silly resolved        [Object],
+120 silly resolved        [Object],
+120 silly resolved        [Object],
+120 silly resolved        [Object],
+120 silly resolved        [Object],
+120 silly resolved        [Object] ],
+120 silly resolved     devDependencies:
+120 silly resolved      { bindings: '~1.2.1',
+120 silly resolved        'node-gyp': '~1.0.2',
+120 silly resolved        pangyp: '~2.0.1',
+120 silly resolved        tap: '~0.5.0',
+120 silly resolved        xtend: '~4.0.0' },
+120 silly resolved     license: 'MIT',
+120 silly resolved     gitHead: '550efb5dde5cb6bf79db87ab48dce850e56e971a',
+120 silly resolved     bugs: { url: 'https://github.com/rvagg/nan/issues' },
+120 silly resolved     homepage: 'https://github.com/rvagg/nan',
+120 silly resolved     _id: 'nan@1.7.0',
+120 silly resolved     _shasum: '755b997404e83cbe7bc08bc3c5c56291bce87438',
+120 silly resolved     _from: 'nan@*',
+120 silly resolved     _npmVersion: '2.5.1',
+120 silly resolved     _nodeVersion: '0.12.0',
+120 silly resolved     _npmUser: { name: 'kkoopa', email: 'bbyholm@abo.fi' },
+120 silly resolved     maintainers: [ [Object], [Object] ],
+120 silly resolved     dist:
+120 silly resolved      { shasum: '755b997404e83cbe7bc08bc3c5c56291bce87438',
+120 silly resolved        tarball: 'http://registry.npmjs.org/nan/-/nan-1.7.0.tgz' },
+120 silly resolved     directories: {},
+120 silly resolved     _resolved: 'https://registry.npmjs.org/nan/-/nan-1.7.0.tgz' } ]
+121 info install nan@1.7.0 into /home/metalx1000/www/Little-Lost-Bot/node_modules/sleep
+122 info installOne nan@1.7.0
+123 verbose node_modules/sleep/node_modules/nan unbuild
+124 verbose tar unpack /home/metalx1000/.npm/nan/1.7.0/package.tgz
+125 silly lockFile f5fe79f5-e-modules-sleep-node-modules-nan tar:///home/metalx1000/www/Little-Lost-Bot/node_modules/sleep/node_modules/nan
+126 verbose lock tar:///home/metalx1000/www/Little-Lost-Bot/node_modules/sleep/node_modules/nan /home/metalx1000/.npm/f5fe79f5-e-modules-sleep-node-modules-nan.lock
+127 silly lockFile 58f40c46-lx1000-npm-nan-1-7-0-package-tgz tar:///home/metalx1000/.npm/nan/1.7.0/package.tgz
+128 verbose lock tar:///home/metalx1000/.npm/nan/1.7.0/package.tgz /home/metalx1000/.npm/58f40c46-lx1000-npm-nan-1-7-0-package-tgz.lock
+129 silly gunzTarPerm modes [ '755', '644' ]
+130 silly gunzTarPerm extractEntry package.json
+131 silly gunzTarPerm modified mode [ 'package.json', 436, 420 ]
+132 silly gunzTarPerm extractEntry include_dirs.js
+133 silly gunzTarPerm modified mode [ 'include_dirs.js', 436, 420 ]
+134 silly gunzTarPerm extractEntry LICENSE.md
+135 silly gunzTarPerm modified mode [ 'LICENSE.md', 436, 420 ]
+136 silly gunzTarPerm extractEntry .dntrc
+137 silly gunzTarPerm modified mode [ '.dntrc', 436, 420 ]
+138 silly gunzTarPerm extractEntry appveyor.yml
+139 silly gunzTarPerm modified mode [ 'appveyor.yml', 436, 420 ]
+140 silly gunzTarPerm extractEntry nan.h
+141 silly gunzTarPerm modified mode [ 'nan.h', 436, 420 ]
+142 silly gunzTarPerm extractEntry nan_implementation_12_inl.h
+143 silly gunzTarPerm modified mode [ 'nan_implementation_12_inl.h', 436, 420 ]
+144 silly gunzTarPerm extractEntry nan_implementation_pre_12_inl.h
+145 silly gunzTarPerm modified mode [ 'nan_implementation_pre_12_inl.h', 436, 420 ]
+146 silly gunzTarPerm extractEntry nan_new.h
+147 silly gunzTarPerm modified mode [ 'nan_new.h', 436, 420 ]
+148 silly gunzTarPerm extractEntry nan_string_bytes.h
+149 silly gunzTarPerm modified mode [ 'nan_string_bytes.h', 436, 420 ]
+150 silly gunzTarPerm extractEntry CHANGELOG.md
+151 silly gunzTarPerm modified mode [ 'CHANGELOG.md', 436, 420 ]
+152 silly lockFile f5fe79f5-e-modules-sleep-node-modules-nan tar:///home/metalx1000/www/Little-Lost-Bot/node_modules/sleep/node_modules/nan
+153 silly lockFile f5fe79f5-e-modules-sleep-node-modules-nan tar:///home/metalx1000/www/Little-Lost-Bot/node_modules/sleep/node_modules/nan
+154 silly lockFile 58f40c46-lx1000-npm-nan-1-7-0-package-tgz tar:///home/metalx1000/.npm/nan/1.7.0/package.tgz
+155 silly lockFile 58f40c46-lx1000-npm-nan-1-7-0-package-tgz tar:///home/metalx1000/.npm/nan/1.7.0/package.tgz
+156 info preinstall nan@1.7.0
+157 verbose readDependencies using package.json deps
+158 verbose readDependencies using package.json deps
+159 silly resolved []
+160 verbose about to build /home/metalx1000/www/Little-Lost-Bot/node_modules/sleep/node_modules/nan
+161 info build /home/metalx1000/www/Little-Lost-Bot/node_modules/sleep/node_modules/nan
+162 verbose linkStuff [ false,
+162 verbose linkStuff   false,
+162 verbose linkStuff   false,
+162 verbose linkStuff   '/home/metalx1000/www/Little-Lost-Bot/node_modules/sleep/node_modules' ]
+163 info linkStuff nan@1.7.0
+164 verbose linkBins nan@1.7.0
+165 verbose linkMans nan@1.7.0
+166 verbose rebuildBundles nan@1.7.0
+167 info install nan@1.7.0
+168 info postinstall nan@1.7.0
+169 verbose about to build /home/metalx1000/www/Little-Lost-Bot/node_modules/sleep
+170 info build /home/metalx1000/www/Little-Lost-Bot/node_modules/sleep
+171 verbose linkStuff [ false,
+171 verbose linkStuff   false,
+171 verbose linkStuff   false,
+171 verbose linkStuff   '/home/metalx1000/www/Little-Lost-Bot/node_modules' ]
+172 info linkStuff sleep@2.0.0
+173 verbose linkBins sleep@2.0.0
+174 verbose linkMans sleep@2.0.0
+175 verbose rebuildBundles sleep@2.0.0
+176 verbose rebuildBundles [ 'nan' ]
+177 info install sleep@2.0.0
+178 verbose unsafe-perm in lifecycle true
+179 info sleep@2.0.0 Failed to exec install script
+180 verbose node_modules/sleep unbuild
+181 warn This failure might be due to the use of legacy binary "node"
+182 warn For further explanations, please read
+/usr/share/doc/nodejs/README.Debian
+183 info preuninstall sleep@2.0.0
+184 info uninstall sleep@2.0.0
+185 verbose true,/home/metalx1000/www/Little-Lost-Bot/node_modules,/home/metalx1000/www/Little-Lost-Bot/node_modules unbuild sleep@2.0.0
+186 info postuninstall sleep@2.0.0
+187 error sleep@2.0.0 install: `node-gyp rebuild`
+187 error Exit status 1
+188 error Failed at the sleep@2.0.0 install script.
+188 error This is most likely a problem with the sleep package,
+188 error not with npm itself.
+188 error Tell the author that this fails on your system:
+188 error     node-gyp rebuild
+188 error You can get their info via:
+188 error     npm owner ls sleep
+188 error There is likely additional logging output above.
+189 error System Linux 3.16.0-4-amd64
+190 error command "/usr/bin/nodejs" "/usr/bin/npm" "install" "sleep"
+191 error cwd /home/metalx1000/www/Little-Lost-Bot
+192 error node -v v0.10.29
+193 error npm -v 1.4.21
+194 error code ELIFECYCLE
+195 verbose exit [ 1, true ]
