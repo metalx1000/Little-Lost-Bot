@@ -46,9 +46,33 @@ bot.addListener("message", function(from, to, text, message) {
     var phrases = list_phrases();
     bot.say(config.channels[0], from + ": I currnetly respond to the following phrases " + phrases);
     console.log(from + ": I currnetly respond to the following phrases " + phrases);
-
+  }else if( text.toLowerCase().indexOf(config.botName) != -1 && text.toLowerCase().indexOf("help") != -1){
+    help(from);
   }
 });
+
+function help(from){
+  bot.say(config.channels[0], from + ": Hello, I am " + config.botName);
+  bot.say(config.channels[0], from + ": I am here to be friendly and helpful. I can do many things, and I also try my best to join in the conversation.");
+  bot.say(config.channels[0], from + ": You can ask me for such things as: 'random video', 'ascii art', 'cowsay' and 'tuxsay'");
+
+  setTimeout(function(){
+    bot.say(config.channels[0], 'tuxsay "HELLO WORLD"');
+    cow_say("tux",'tuxsay "HELLO WORLD"');
+  },3000);
+
+  setTimeout(function(){
+    bot.say(config.channels[0], from + ": I can also decode and encode things into Morse Code:");   
+    bot.say(config.channels[0], 'morse code "HELLO WORLD"');    
+//    morse_code(config.botName,"HELLO WORLD");
+  },10000);
+
+  setTimeout(function(){
+    bot.say(config.channels[0], from + ": For a full list of phrases I respond to just ask me.");
+    bot.say(config.channels[0], from + ": Example:");
+    bot.say(config.channels[0], config.botName + ": list phrases please.");
+  },15000);
+}
 
 function morse_code(from,text){
   var msg = text.split('"');
@@ -136,8 +160,8 @@ function random_video(){
   });
 }
 
-//display random video URL every hour
-setInterval(random_video,60*60*1000);
+//display random video URL every 2 hours
+setInterval(random_video,60*60*2000);
 
 //load random ascii file
 function get_ascii(){
